@@ -13,32 +13,33 @@ public:
           
         // THIS IS SAME AS NEXT PERMUTATION
         
-          int size=nums.size();
-          int index=-1;
+        int size=nums.size(),fi=-1;
         
+        //finding first index
         for(int i=size-2;i>=0;i--){
             
             if(nums[i] < nums[i+1])
             {
-                index=i;
+                fi=i;
                 break;
             }
         }
         
-        if(index==-1) return index;
+        if(fi==-1) return fi;
         
-        int number=0;
+        //finding second index
+        int si=0;
         
-        for(int i=index+1;i<nums.size();i++)
+        for(int i=fi+1;i<nums.size();i++)
         {
-            if(nums[i] > nums[index])
+            if(nums[i] > nums[fi])
             {
-                number=i;
+                si=i;
             }
         }
         
-        swap(nums[index],nums[number]);
-        reverse(nums.begin()+index+1,nums.end());
+        swap(nums[fi],nums[si]);
+        reverse(nums.begin()+fi+1,nums.end());
        
         
         long long int res=0;
