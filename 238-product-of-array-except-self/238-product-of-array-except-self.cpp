@@ -1,0 +1,32 @@
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+    
+    int n=nums.size();
+    vector<int> output;
+    
+        if(n<1)
+            return output;
+        
+    int product =1;
+        
+        for(int i=0;i<n;i++)
+        {
+            product *=nums[i];
+            output.push_back(product);
+        }
+        
+        //traverse from right
+        product=1;
+        for(int i=n-1;i>0;i--)
+        {
+            output[i]= product * output[i-1];
+            product *= nums[i];
+        }
+        
+        output[0] = product;
+        
+        return output;
+        
+    }
+};
