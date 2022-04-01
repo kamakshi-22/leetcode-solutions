@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
     vector<int> ans;
-    vector<int> v(nums);      // 8 1 2 2 3
+    vector<int> v(nums);      // 8 1 2 2 3 copy to new vector
     sort(v.begin(), v.end()); // 1 2 2 3 8
     vector<int>::iterator lb;
 
