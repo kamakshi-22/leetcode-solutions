@@ -16,6 +16,7 @@ public:
                 r[i][j] = r[i-1][j-1] + r[i-1][j];
             
         }
+        //t.c &s.c = O(n^2)
         return r;
     }
 };
